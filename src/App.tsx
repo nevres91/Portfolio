@@ -1,11 +1,19 @@
 import "./App.css";
-import logo from "../public/logo.png";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Components from "./pages/Components";
+import ProjectDetails from "./pages/ProjectDetails";
 
 function App() {
   return (
     <>
-      <img className="w-[200px] h-[200px]" src={logo} alt="" />
-      <div>Portfolio</div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/components" element={<Components />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
