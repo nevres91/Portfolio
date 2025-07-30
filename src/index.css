@@ -1,2 +1,32 @@
 @import "tailwindcss";
 @import "./styles/animations.css";
+
+@font-face {
+  font-family: Allerta;
+  src: url("../src/assets/fonts/AllertaStencil-Regular.ttf");
+}
+@font-face {
+  font-family: Anta;
+  src: url("../src/assets/fonts/Anta-Regular.ttf");
+}
+
+@theme {
+  --font-allerta: Allerta, "sans-serif";
+  --font-anta: Anta, "sans-serif";
+  --color-dark: #1d1616;
+  --color-bloody: #8e1616;
+  --color-light-red: #d84040;
+  --color-light: #eeeeee;
+}
+
+.noise::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='1' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 1;
+  mix-blend-mode: overlay;
+}

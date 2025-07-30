@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-black text-white flex items-center justify-center"
+      className="min-h-screen bg-transparent text-white flex items-center justify-center"
     >
       <div>
         <h2 className="text-4xl font-bold text-cyan-400 mb-8">My Projects</h2>

@@ -6,12 +6,15 @@ import Projects from "../components/ui/layout/sections/Projects";
 
 export default function Landing() {
   return (
-    <div className="bg-black text-white">
-      <Navbar />
-      <Home />
-      <AboutMe />
-      <Projects />
-      <Contact />
+    <div className="relative min-h-screen bg-dark text-white">
+      <div className="absolute inset-0 noise z-10"></div>
+      <div className="relative z-20">
+        <Navbar />
+        <Home />
+        <AboutMe />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
 }
