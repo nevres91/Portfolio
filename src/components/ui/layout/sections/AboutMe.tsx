@@ -6,9 +6,6 @@ export default function AboutMe() {
       id="about"
       className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative "
     >
-      <div className="absolute left-[-50%] lg:left-[-20%] lg:top-[-9%]  xl:top-[-18%] w-[600px] xl:w-[700px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
-      <div className="absolute left-[40%] lg:left-[80%] lg:top-[10%]  xl:left-[calc(50%-260px)] top-[15%] xl:top-[-8%] w-[400px] xl:w-[600px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
-      <div className="absolute hidden lg:block lg:right-[12%] xl:right-[-10%] top-[1%] w-[500px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
       <div //ABOUT ME TITLE
         className="flex justify-center items-center h-fit"
       >
@@ -49,7 +46,7 @@ export default function AboutMe() {
         >
           <img
             className="w-[220px] h-[329px] object-cover hidden md:block z-50"
-            src="/src/assets/img/portrait.png"
+            src="/src/assets/img/nevres_portrait.png"
             alt="Portrait of Nevres Muratović"
           />
           <p className="font-jura-light text-light/50 self-start">
@@ -59,13 +56,16 @@ export default function AboutMe() {
             className="flex text-[42px] justify-between mt-4 text-light/80 w-[90%] "
           >
             <i className="fa-brands fa-facebook social-icon p-2 rounded-full"></i>
-            <i className="fa-brands fa-linkedin social-icon p-2 "></i>
+            <i className="fa-brands fa-linkedin social-icon p-2 rounded-md"></i>
             <i className="fa-brands fa-github social-icon p-2 rounded-full"></i>
-            <i className="fa-brands fa-instagram social-icon p-2"></i>
+            <i className="fa-brands fa-instagram social-icon p-2 rounded-2xl"></i>
           </div>
         </div>
         <div className="flex"></div>
       </div>
+      <div className="absolute left-[-50%] lg:left-[-20%] lg:top-[-9%]  xl:top-[-18%] w-[600px] xl:w-[700px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
+      <div className="absolute left-[40%] lg:left-[80%] lg:top-[10%]  xl:left-[calc(50%-260px)] top-[15%] xl:top-[-8%] w-[400px] xl:w-[600px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
+      <div className="absolute hidden lg:block lg:right-[12%] xl:right-[-10%] top-[1%] w-[500px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
     </section>
   );
 }

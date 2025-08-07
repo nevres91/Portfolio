@@ -3,6 +3,7 @@ import AboutMe from "../components/ui/layout/sections/AboutMe";
 import Contact from "../components/ui/layout/sections/Contact";
 import Home from "../components/ui/layout/sections/Home";
 import Projects from "../components/ui/layout/sections/Projects";
+import { Skills } from "../components/ui/layout/sections/Skills";
 
 export default function Landing() {
   return (
@@ -12,6 +13,7 @@ export default function Landing() {
         <Navbar />
         <Home />
         <AboutMe />
+        <Skills />
         <Projects />
         <Contact />
       </div>
