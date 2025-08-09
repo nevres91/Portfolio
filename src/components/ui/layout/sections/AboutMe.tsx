@@ -4,7 +4,7 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative "
+      className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative"
     >
       <div //ABOUT ME TITLE
         className="flex justify-center items-center h-fit"
@@ -49,7 +49,7 @@ export default function AboutMe() {
             src="/src/assets/img/nevres_portrait.png"
             alt="Portrait of Nevres Muratović"
           />
-          <p className="font-jura-light text-light/50 self-start">
+          <p className="font-jura-light text-light/50 self-start md:self-center">
             nevres_muratovic@hotmail.com
           </p>
           <div //SOCIAL ICONS
@@ -63,9 +63,9 @@ export default function AboutMe() {
         </div>
         <div className="flex"></div>
       </div>
-      <div className="absolute left-[-50%] lg:left-[-20%] lg:top-[-9%]  xl:top-[-18%] w-[600px] xl:w-[700px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
-      <div className="absolute left-[40%] lg:left-[80%] lg:top-[10%]  xl:left-[calc(50%-260px)] top-[15%] xl:top-[-8%] w-[400px] xl:w-[600px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
-      <div className="absolute hidden lg:block lg:right-[12%] xl:right-[-10%] top-[1%] w-[500px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35"></div>
+      <div className="absolute left-[-50%] lg:left-[-20%] lg:top-[-9%]  xl:top-[-18%] w-[600px] xl:w-[700px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"></div>
+      <div className="absolute left-[40%] lg:left-[80%] lg:top-[10%]  xl:left-[calc(50%-260px)] top-[15%] xl:top-[-8%] w-[400px] xl:w-[600px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"></div>
+      <div className="absolute hidden lg:block lg:right-[12%] xl:right-[-10%] top-[1%] w-[500px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"></div>
     </section>
   );
 }

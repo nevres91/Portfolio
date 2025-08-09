@@ -35,8 +35,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 p-0 md:p-4 ${
-        opacity === 1 ? "" : "backdrop-blur-3xl"
+      className={`fixed w-full p-0 md:p-4 z-90 ${
+        opacity === 1 ? "" : "backdrop-blur-3xl bg-black/20"
       }   ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       } transition-transform duration-300 ease-in-out`}

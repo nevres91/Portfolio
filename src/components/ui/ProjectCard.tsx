@@ -7,39 +7,48 @@ export const ProjectCard: React.FC<Project> = ({
   image,
 }) => {
   return (
-    <div //Container
-      className="flex flex-col rounded-md w-[360px] h-[436px] p-2 bg-dark/40 border border-bloody/20 shadow-lg shadow-bloody/40 relative"
+    <div //CONTAINER
       key={id}
+      className="container flex relative w-[400px] h-[500px] overflow-hidden rounded-lg hover:translate-y-[-5px] duration-100"
     >
-      <div //Image
-        className="w-full h-[223px] min-h-[223px] max-h-[223px] rounded-t-sm overflow-hidden relative"
+      <div //Card Content
+        className={`flex flex-col card w-full h-full rounded-xl cursor-default p-3 justify-center items-center text-start 
+      }`}
       >
-        <img
-          className="w-full h-full object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          src={image}
-          alt="a dummy image"
-        />
+        <div //CARD IMAGE
+          className="w-full h-[223px] min-h-[223px] max-h-[40%] rounded-t-md relative border-2 border-white"
+        >
+          <img
+            src={image}
+            alt=""
+            className="w-full h-full object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
+          />
+        </div>
+        <div //TITLE
+          className="flex z-10 items-center self-start"
+        >
+          <h4 className="text-light font-jura z-10 text-xl mt-2">{title}</h4>
+        </div>
+        <div //DESCRIPTION
+          className="flex h-full w-full overflow-hidden z-10"
+        >
+          {" "}
+          <p className="text-light font-jura-light text-sm z-10  line-clamp-6 overflow-hidden">
+            {description}
+          </p>
+        </div>
+        <div //Bottom
+          className="flex justify-between w-full items-center mt-1 z-10"
+        >
+          <p className="font-jura-light text-sm text-blue-400 cursor-pointer hover:text-blue-500 transition-all ease-in-out duration-50">
+            Live Demo
+          </p>
+          <button className="py-[2px] px-2 bg-bloody border border-light rounded-md cursor-pointer hover:text-bloody hover:bg-light hover:border-bloody transition-all duration-100">
+            Details
+          </button>
+        </div>
       </div>
-      <div //Title
-        className="font-jura text-xl my-2 text-light "
-      >
-        {title}
-      </div>
-      <div //Description
-        className="font-jura-light text-sm text-light w-full h-[27%] line-clamp-5 overflow-hidden break-words"
-      >
-        {description}
-      </div>
-      <div //Bottom
-        className="flex justify-between items-center mt-4 "
-      >
-        <p className="font-jura-light text-sm text-blue-400 cursor-pointer hover:text-blue-500 transition-all ease-in-out duration-50">
-          Live Demo
-        </p>
-        <button className="py-1 px-2 bg-bloody border border-light rounded-md cursor-pointer hover:text-bloody hover:bg-light hover:border-bloody transition-all duration-100">
-          Details
-        </button>
-      </div>
+      <div className="noise-card absolute"></div>
     </div>
   );
 };

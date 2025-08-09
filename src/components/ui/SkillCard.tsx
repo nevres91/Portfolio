@@ -10,7 +10,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ url, title, alt }) => {
       <div className="flex items-center justify-center">
         <img src={url} alt={alt} />
       </div>
-      <div className="flex items-center justify-center font-jura-light text-light text-md font-bold sm:text-xs w-[65%] sm:w-auto ">
+      <div className="flex items-center justify-center font-jura-light text-light text-md font-bold sm:text-sm w-[65%] sm:w-auto ">
         {title}
       </div>
     </div>

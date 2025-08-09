@@ -37,6 +37,14 @@
   width: 100%;
   height: 100%;
 }
+.noise-card {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSIzNDM0IiB2aWV3Qm94PSIwIDAgMTQ0MCAzNDM0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9uXzg1XzI2KSI+CjxyZWN0IHdpZHRoPSIxNDQwIiBoZWlnaHQ9IjM0MzQiIGZpbGw9IiMxRTFFMUUiLz4KPC9nPgo8ZGVmcz4KPGZpbHRlciBpZD0iZmlsdGVyMF9uXzg1XzI2IiB4PSIwIiB5PSIwIiB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSIzNDM0IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW49IlNvdXJjZUdyYXBoaWMiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9InNoYXBlIi8+CjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIxLjUgMS41IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIiBudW1PY3RhdmVzPSIxIiByZXN1bHR0PSJub2lzZSIgc2VlZD0iNDQ2NiIgLz4KPGZlQ29sb3JNYXRyaXggaW49Im5vaXNlIiB0eXBlPSJsdW1pbmFuY2VUb0FscGhhIiByZXN1bHQ9ImFscGhhTm9pc2UiIC8+CjxmZUNvbXBvbmVudFRyYW5zZmVyIGluPSJhbHBoYU5vaXNlIiByZXN1bHQ9ImNvbG9yZWROb2lzZTEiPgo8ZmVGdW5jQSB0eXBlPSJkaXNjcmV0ZSIgdGFibGVWYWx1ZXM9IjEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMSAxIDEgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAiLz4KPC9mZUNvbXBvbmVudFRyYW5zZmVyPgo8ZmVDb21wb3NpdGUgb3BlcmF0b3I9ImluIiBpbjI9InNoYXBlIiBpbj0iY29sb3JlZE5vaXNlMSIgcmVzdWx0PSJub2lzZTFDbGlwcGVkIiAvPgo8ZmVGbG9vZCBmbG9vZC1jb2xvcj0iIzAwMDAwMCIgcmVzdWx0PSJjb2xvcjFGbG9vZCIgLz4KPGZlQ29tcG9zaXRlIG9wZXJhdG9yPSJpbiIgaW4yPSJub2lzZTFDbGlwcGVkIiBpbj0iY29sb3IxRmxvb2QiIHJlc3VsdD0iY29sb3IxIiAvPgo8ZmVNZXJnZSByZXN1bHQ9ImVmZmVjdDFfbm9pc2VfODVfMjYiPgo8ZmVNZXJnZU5vZGUgaW49InNoYXBlIiAvPgo8ZmVNZXJnZU5vZGUgaW49ImNvbG9yMSIgLz4KPC9mZU1lcmdlPgo8L2ZpbHRlcj4KPC9kZWZzPgo8L3N2Zz4K");
+  background-size: contain;
+  background-repeat: repeat;
+  opacity: 0.16;
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 560px) {
   .noise {
     opacity: 0.6;
@@ -47,4 +55,32 @@
   .social-icon {
     @apply hover:text-light cursor-pointer hover:scale-105 hover:rotate-6 transition-all duration-100 ease-in-out hover:[box-shadow:0_0_40px_5px_rgba(239,68,68,0.3)];
   }
+}
+
+/* HOVER EFFECT */
+/* CARD HOVER EFFECT */
+.container .card::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(var(--clr), transparent, transparent);
+  width: 800px;
+  height: 800px;
+  opacity: 0;
+  transition: 0.5s, top 0s, left 0s;
+  pointer-events: none;
+}
+
+.container .card:hover::before {
+  opacity: 1;
+}
+
+.container .card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 5px;
+  background: rgba(27, 27, 27, 0.622);
 }
