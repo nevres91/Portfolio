@@ -1,9 +1,8 @@
 import type { Project } from "../../../../types/project";
-import { ProjectCard } from "../../ProjectCard";
 import useCardGlowEffect from "../../../../hooks/useCardGlowEffect";
 import { ProjectCarousel } from "../../ProjectCarousel";
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     id: "1",
     title: "Project 1",
@@ -16,6 +15,7 @@ const projects: Project[] = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa cumque non vel suscipit eaque. Nam maxime sunt doloremque sit voluptates quasi iste minus distinctio reprehenderit dolores natus minima omnis repudiandae excepturi eum illum est recusandae necessitatibus corporis sed accusamus, ea aspernatur eius. Nesciunt enim ut, dolor molestiae libero impedit? Similique natus laboriosam pariatur et aliquam vitae voluptatum illo voluptatem.",
     image: "/src/assets/img/project_2_image.png",
+    color: "purple",
   },
   {
     id: "3",

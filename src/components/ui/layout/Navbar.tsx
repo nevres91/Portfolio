@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { scrollToElement } from "../../../utils/scroll";
 import { useScrollFade } from "../../../hooks/useScrollFade";
+import { calcGeneratorDuration } from "motion";
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const opacity = useScrollFade(100);
+  const location = useLocation();
 
   const navItems = [
     { href: "home", label: "Home" },
     { href: "about", label: "About" },
     { href: "projects", label: "Projects" },
     { href: "contact", label: "Contact" },
+    { href: "components", label: "Components" },
   ];
 
   useEffect(() => {
@@ -30,90 +33,103 @@ export default function Navbar() {
 
     window.addEventListener("scroll", controlNavbar);
 
-    return () => window.removeEventListener("scroll", controlNavbar);
+    //Scroll after navigation
+    const handleHashChange = () => {
+      // If a link has hash "#" in it, extract the string after the hash and scroll to that string id.
+      if (location.hash) {
+        //location.hash returns part of the link after the "#" simbol includint the #
+        const target = location.hash.substring(1); //keeps all the letters starting from second letter, including the seccong letter (positon 1), removes first one (positon 0)
+        scrollToElement(target);
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
+
+  const isHomepage = location.pathname === "/";
 
   return (
     <nav
       className={`fixed w-full p-0 md:p-4 z-90 ${
         opacity === 1 ? "" : "backdrop-blur-3xl bg-black/20"
-      }   ${
+      } ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       } transition-transform duration-300 ease-in-out`}
     >
-      <ul className="hidden md:flex justify-center space-x-5 font-anta tracking-wide ">
-        {navItems.map((item) => {
-          return (
-            <li>
-              <a
-                className={`${
-                  item.label === "Home"
-                    ? "hover:bg-light-red hover:text-light"
-                    : "hover:bg-light hover:text-light-red"
-                } p-1 px-2 rounded-md transition-colors ${
-                  item.label === "Home" ? "text-light-red" : "text-light"
-                }`}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex justify-center space-x-5 font-anta tracking-wide">
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <NavLink
+              to={
+                item.label === "Components"
+                  ? `/${item.href}`
+                  : isHomepage
+                  ? `#${item.href}`
+                  : `/#${item.href}`
+              }
+              className={`${
+                item.label === "Home"
+                  ? "text-light-red hover:bg-light-red hover:text-light"
+                  : "text-light hover:bg-light hover:text-light-red"
+              } p-1 px-2 rounded-md transition-colors`}
+              onClick={(e) => {
+                if (isHomepage && item.label !== "Components") {
                   scrollToElement(item.href);
-                }}
-              >
-                {item.label}
-              </a>
-            </li>
-          );
-        })}
-        <li>
-          <NavLink
-            to="/components"
-            className={({ isActive }) =>
-              `hover:bg-light hover:text-light-red transition-colors p-1 px-2 rounded-md ${
-                isActive ? "text-cyan-400" : "text-white"
-              }`
-            }
-          >
-            Components
-          </NavLink>
-        </li>
+                }
+              }}
+            >
+              {item.label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
 
-      <div // MOBILE MENU
-        className="flex md:hidden h-10 bg-bloody  items-center justify-end px-4"
-      >
+      {/* Mobile Menu */}
+      <div className="flex md:hidden h-10 bg-bloody items-center justify-end px-4 text-light">
         <i
-          className={`fa-solid fa-xl ${
-            !isMobileMenuOpen ? "fa-bars" : "fa-xmark"
+          className={`fa-solid fa-xl transition-transform ease-in-out duration-200 ${
+            !isMobileMenuOpen ? "fa-bars rotate-360" : "fa-xmark rotate-180"
           } cursor-pointer z-40`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         ></i>
         <div
           className={`absolute top-10 right-0 flex flex-col w-[250px] transition-all duration-100 ease-in-out z-20 overflow-hidden ${
-            isMobileMenuOpen ? " max-h-80" : " max-h-0"
+            isMobileMenuOpen ? "max-h-80" : "max-h-0"
           }`}
         >
-          <ul className="bg-bloody text-center 0 rounded-bl-lg font-anta">
-            {navItems.map((item) => {
-              return (
-                <li className="hover:bg-red-700 transition-colors duration-20">
-                  <a
-                    onClick={(e) => {
-                      e.preventDefault();
+          <ul className="bg-bloody text-center rounded-bl-lg font-anta">
+            {navItems.map((item) => (
+              <li
+                key={item.href}
+                className="hover:bg-red-700 transition-colors duration-20"
+              >
+                <NavLink
+                  to={
+                    item.label === "Components"
+                      ? `/${item.href}`
+                      : isHomepage
+                      ? `#${item.href}`
+                      : `/#${item.href}`
+                  }
+                  className="block w-full p-2"
+                  onClick={(e) => {
+                    if (isHomepage && item.label !== "Components") {
                       scrollToElement(item.href);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="block w-full p-2"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              );
-            })}
-            <li className="hover:bg-red-700 transition-colors duration-20 p-2 cursor-pointer mb-5">
-              <NavLink to="/components" className="block w-full">
-                Components
-              </NavLink>
-            </li>
+                    }
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

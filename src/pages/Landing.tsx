@@ -1,3 +1,4 @@
+import { Footer } from "../components/ui/layout/Footer";
 import Navbar from "../components/ui/layout/Navbar";
 import AboutMe from "../components/ui/layout/sections/AboutMe";
 import Contact from "../components/ui/layout/sections/Contact";
@@ -16,6 +17,7 @@ export default function Landing() {
         <Skills />
         <Projects />
         <Contact />
+        <Footer />
       </div>
     </div>
   );

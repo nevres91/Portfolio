@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Project } from "../../types/project";
 
 export const ProjectCard: React.FC<Project> = ({
@@ -43,9 +44,13 @@ export const ProjectCard: React.FC<Project> = ({
           <p className="font-jura-light text-sm text-blue-400 cursor-pointer hover:text-blue-500 transition-all ease-in-out duration-50">
             Live Demo
           </p>
-          <button className="py-[2px] px-2 bg-bloody border border-light rounded-md cursor-pointer hover:text-bloody hover:bg-light hover:border-bloody transition-all duration-100">
+          <Link
+            to={`/project/${id}`}
+            onClick={() => window.scrollTo(0, 0)}
+            className="py-[2px] px-2 bg-bloody border border-light rounded-md cursor-pointer hover:text-bloody hover:bg-light hover:border-bloody transition-all duration-100 font-jura-light"
+          >
             Details
-          </button>
+          </Link>
         </div>
       </div>
       <div className="noise-card absolute"></div>

@@ -18,7 +18,7 @@ export default function AboutMe() {
         </div>
       </div>
       <div //CONTENT
-        className="flex flex-col md:flex-row items-center justify-between mt-10 relative"
+        className="flex flex-col md:flex-row items-center justify-between mt-5 sm:mt-10 relative"
       >
         <div //LEFT
           className="flex flex-col justify-center md:w-[70%]  "
@@ -36,9 +36,9 @@ export default function AboutMe() {
             building, and always looking for the next challenge that pushes me
             to grow.
           </p>
-          <div className="flex w-[300px] justify-between mt-4 md:mt-10 md:absolute bottom-0 left-0">
-            <Button>Read More</Button>
-            <Button>Download Resume</Button>
+          <div className="flex w-full sm:w-[300px] justify-between mt-4 md:mt-10 md:absolute bottom-0 left-0 ">
+            <Button width="w-[48%] sm:w-auto">Read More</Button>
+            <Button width="w-[48%] sm:w-auto">Download Resume</Button>
           </div>
         </div>
         <div //RIGHT
@@ -49,11 +49,11 @@ export default function AboutMe() {
             src="/src/assets/img/nevres_portrait.png"
             alt="Portrait of Nevres Muratović"
           />
-          <p className="font-jura-light text-light/50 self-start md:self-center">
+          <p className="font-jura-light text-light/50  md:self-center">
             nevres_muratovic@hotmail.com
           </p>
           <div //SOCIAL ICONS
-            className="flex text-[42px] justify-between mt-4 text-light/80 w-[90%] "
+            className="flex text-[42px] justify-between mt-4 text-light/80  gap-5 md:gap-0 md:w-[90%] "
           >
             <i className="fa-brands fa-facebook social-icon p-2 rounded-full"></i>
             <i className="fa-brands fa-linkedin social-icon p-2 rounded-md"></i>

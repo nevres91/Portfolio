@@ -1,75 +1,75 @@
 import { SkillCard } from "../../SkillCard";
 
+export const skills = [
+  {
+    title: "HTML",
+    url: "/src/assets/img/HTML.png",
+    alt: "An icon of HTML logo",
+  },
+  {
+    title: "CSS",
+    url: "/src/assets/img/Css.png",
+    alt: "An icon of CSS logo",
+  },
+  {
+    title: "Tailwind CSS",
+    url: "/src/assets/img/Tailwind.png",
+    alt: "An icon of Tailwind CSS logo",
+  },
+  {
+    title: "Material UI",
+    url: "/src/assets/img/MUI.png",
+    alt: "An icon of Material UI logo",
+  },
+  {
+    title: "Javascript",
+    url: "/src/assets/img/JS.png",
+    alt: "An icon of Javascrypt logo",
+  },
+  {
+    title: "Typescript",
+    url: "/src/assets/img/Typescript.png",
+    alt: "An icon of Typescript logo",
+  },
+  {
+    title: "React",
+    url: "/src/assets/img/react.png",
+    alt: "An icon of React logo",
+  },
+  {
+    title: "Vite",
+    url: "/src/assets/img/Vite.png",
+    alt: "An icon of Vite logo",
+  },
+  {
+    title: "Firebase",
+    url: "/src/assets/img/Firebase.png",
+    alt: "An icon of Firebase logo",
+  },
+  {
+    title: "Figma",
+    url: "/src/assets/img/FIGMA.png",
+    alt: "An icon of Figma logo",
+  },
+  {
+    title: "Cinema4D",
+    url: "/src/assets/img/Cinema4D.png",
+    alt: "An icon of Cinema4D logo",
+  },
+  {
+    title: "Photoshop",
+    url: "/src/assets/img/Photoshop.png",
+    alt: "An icon of Photoshop logo",
+  },
+];
 export const Skills = () => {
-  const skills = [
-    {
-      title: "HTML",
-      url: "/src/assets/img/HTML.png",
-      alt: "An icon of HTML logo",
-    },
-    {
-      title: "CSS",
-      url: "/src/assets/img/Css.png",
-      alt: "An icon of CSS logo",
-    },
-    {
-      title: "Tailwind CSS",
-      url: "/src/assets/img/Tailwind.png",
-      alt: "An icon of Tailwind CSS logo",
-    },
-    {
-      title: "Material UI",
-      url: "/src/assets/img/MUI.png",
-      alt: "An icon of Material UI logo",
-    },
-    {
-      title: "Javascrypt",
-      url: "/src/assets/img/JS.png",
-      alt: "An icon of Javascrypt logo",
-    },
-    {
-      title: "Typescrypt",
-      url: "/src/assets/img/Typescript.png",
-      alt: "An icon of Typescript logo",
-    },
-    {
-      title: "React",
-      url: "/src/assets/img/react.png",
-      alt: "An icon of React logo",
-    },
-    {
-      title: "Vite",
-      url: "/src/assets/img/Vite.png",
-      alt: "An icon of Vite logo",
-    },
-    {
-      title: "Firebase",
-      url: "/src/assets/img/Firebase.png",
-      alt: "An icon of Firebase logo",
-    },
-    {
-      title: "Figma",
-      url: "/src/assets/img/FIGMA.png",
-      alt: "An icon of Figma logo",
-    },
-    {
-      title: "Cinema4D",
-      url: "/src/assets/img/Cinema4D.png",
-      alt: "An icon of Cinema4D logo",
-    },
-    {
-      title: "Photoshop",
-      url: "/src/assets/img/Photoshop.png",
-      alt: "An icon of Photoshop logo",
-    },
-  ];
   return (
     <section
       id="about"
       className="flex flex-col max-w-7xl relative items-center mt-20 w-full"
     >
       <div //TITLE
-        className="flex items-center justify-center mb-10 text-2xl md:text-3xl font-bold font-jura-light uppercase text-light"
+        className="flex items-center justify-center mb-5 sm:mb-10 text-2xl md:text-3xl font-bold font-jura-light uppercase text-light"
       >
         <img
           src="/src/assets/img/skills.png"
@@ -83,7 +83,12 @@ export const Skills = () => {
       >
         {skills.map((skill) => {
           return (
-            <SkillCard url={skill.url} alt={skill.alt} title={skill.title} />
+            <SkillCard
+              url={skill.url}
+              alt={skill.alt}
+              title={skill.title}
+              key={skill.title}
+            />
           );
         })}
       </div>
