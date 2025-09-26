@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { scrollToElement } from "../../../utils/scroll";
 import { useScrollFade } from "../../../hooks/useScrollFade";
-import { calcGeneratorDuration } from "motion";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -55,7 +55,10 @@ export default function Navbar() {
   const isHomepage = location.pathname === "/";
 
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
       className={`fixed w-full p-0 md:p-4 z-90 ${
         opacity === 1 ? "" : "backdrop-blur-3xl bg-black/20"
       } ${
@@ -133,6 +136,6 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

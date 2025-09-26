@@ -17,49 +17,49 @@ export const Footer = () => {
           </div>
 
           {/* Center Section: Navigation Links */}
-          <nav className="flex gap-4 text-sm font-jura-light">
+          <nav className="flex gap-8 text-sm font-jura-light">
             <a href="#home" className="hover:text-red-400 transition-colors">
-              Home
+              <i className="fa-solid fa-house fa-xl"></i>
             </a>
             <a
               href="#projects"
               className="hover:text-red-400 transition-colors"
             >
-              Projects
+              <i className="fa-solid fa-diagram-project fa-xl"></i>
             </a>
             <a href="#about" className="hover:text-red-400 transition-colors">
-              About
+              <i className="fa-solid fa-address-card fa-xl"></i>
             </a>
             <a href="#contact" className="hover:text-red-400 transition-colors">
-              Contact
+              <i className="fa-solid fa-phone fa-xl"></i>
             </a>
           </nav>
 
           {/* Right Section: Social Media */}
           <div className="flex gap-4 text-sm font-jura-light">
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://linkedin.com/in/nevres-muratovic-9718a4321"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-400 transition-colors"
             >
-              LinkedIn
+              <i className="fa-brands fa-linkedin fa-xl"></i>
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/nevres91"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-400 transition-colors"
             >
-              GitHub
+              <i className="fa-brands fa-github fa-xl"></i>
             </a>
             <a
-              href="https://twitter.com/yourhandle"
+              href="https://www.facebook.com/nevres.muratovic"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-400 transition-colors"
             >
-              Twitter
+              <i className="fa-brands fa-facebook fa-xl"></i>
             </a>
           </div>
         </div>

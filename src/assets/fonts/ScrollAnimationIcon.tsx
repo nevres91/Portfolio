@@ -16,8 +16,9 @@ const ScrollAnimationIcon: React.FC<ScrollAnimationIconProps> = ({
       <motion.div
         className="scrolldown"
         style={{ opacity }}
-        initial={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, delay: 2.5 }}
       >
         <div className="chevrons">
           <div className="chevrondown" />

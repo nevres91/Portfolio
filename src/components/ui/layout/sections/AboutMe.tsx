@@ -1,6 +1,9 @@
+import { useInViewAnimation } from "../../../../hooks/useInViewAnimation";
 import Button from "../../Button";
+import { motion } from "framer-motion";
 
 export default function AboutMe() {
+  const { ref: ref, controls: controls } = useInViewAnimation();
   return (
     <section
       id="about"
@@ -63,9 +66,24 @@ export default function AboutMe() {
         </div>
         <div className="flex"></div>
       </div>
-      <div className="absolute left-[-50%] lg:left-[-20%] lg:top-[-9%]  xl:top-[-18%] w-[600px] xl:w-[700px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"></div>
-      <div className="absolute left-[40%] lg:left-[80%] lg:top-[10%]  xl:left-[calc(50%-260px)] top-[15%] xl:top-[-8%] w-[400px] xl:w-[600px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"></div>
-      <div className="absolute hidden lg:block lg:right-[12%] xl:right-[-10%] top-[1%] w-[500px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"></div>
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial={{ opacity: 0 }}
+        className="absolute left-[-50%] lg:left-[-10%] lg:top-[-9%]  xl:top-[-12%] w-[600px] xl:w-[650px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
+      ></motion.div>
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial={{ opacity: 0 }}
+        className="absolute left-[40%] lg:left-[80%] lg:top-[10%]  xl:left-[calc(50%-260px)] top-[15%] xl:top-[-8%] w-[400px] xl:w-[600px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
+      ></motion.div>
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial={{ opacity: 0 }}
+        className="absolute hidden lg:block lg:right-[12%] xl:right-[-10%] top-[1%] w-[500px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
+      ></motion.div>
     </section>
   );
 }
