@@ -1,6 +1,8 @@
 import type { Project } from "../../../../types/project";
 import useCardGlowEffect from "../../../../hooks/useCardGlowEffect";
 import { ProjectCarousel } from "../../ProjectCarousel";
+import { motion } from "framer-motion";
+import { useInViewAnimation } from "../../../../hooks/useInViewAnimation";
 
 export const projects: Project[] = [
   {
@@ -51,6 +53,8 @@ export const projects: Project[] = [
 
 export default function Projects() {
   useCardGlowEffect();
+  const { ref: ref, controls: controls } = useInViewAnimation();
+
   return (
     <section //Container
       id="projects"
@@ -67,9 +71,24 @@ export default function Projects() {
         <h2 className="ml-2">My Projects</h2>
       </div>
       <ProjectCarousel projects={projects} />
-      <div className="absolute left-[0]  xl:left-[-10%] top-[-3%]     w-[600px] xl:w-[800px]  aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-40 -z-10"></div>
-      <div className="absolute right-[0] xl:left-[45%]  top-[20%]     w-[600px] xl:w-[800px]  aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-40 -z-10"></div>
-      <div className="absolute left-[0]  xl:left-[0%]   bottom-[-10%] w-[600px] xl:w-[800px]  aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-40 -z-10"></div>
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial={{ opacity: 0 }}
+        className="absolute left-[0]  xl:left-[-10%] top-[-3%]     w-[600px] xl:w-[800px]  aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-40 -z-10"
+      ></motion.div>
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial={{ opacity: 0 }}
+        className="absolute right-[0] xl:left-[45%]  top-[20%]     w-[600px] xl:w-[800px]  aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-40 -z-10"
+      ></motion.div>
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial={{ opacity: 0 }}
+        className="absolute left-[0]  xl:left-[0%]   bottom-[-10%] w-[600px] xl:w-[800px]  aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-40 -z-10"
+      ></motion.div>
     </section>
   );
 }

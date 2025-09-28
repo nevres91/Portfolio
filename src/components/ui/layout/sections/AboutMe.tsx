@@ -3,7 +3,9 @@ import Button from "../../Button";
 import { motion } from "framer-motion";
 
 export default function AboutMe() {
-  const { ref: ref, controls: controls } = useInViewAnimation();
+  const { ref: ref1, controls: controls1 } = useInViewAnimation();
+  const { ref: ref2, controls: controls2 } = useInViewAnimation();
+  const { ref: ref3, controls: controls3 } = useInViewAnimation();
   return (
     <section
       id="about"
@@ -12,9 +14,13 @@ export default function AboutMe() {
       <div //ABOUT ME TITLE
         className="flex justify-center items-center h-fit"
       >
-        <h2 className="text-2xl md:text-3xl font-bold font-jura-light uppercase text-light">
+        <motion.h2
+          initial={{ y: 50 }}
+          animate={{ y: 0 }}
+          className="text-2xl md:text-3xl font-bold font-jura-light uppercase text-light"
+        >
           About{" "}
-        </h2>
+        </motion.h2>
         <div className="ml-2 flex items-center justify-center text-3xl md:text-4xl font-jura  px-2 bg-light rounded-xl h-fit">
           <span className="text-bloody mb-1">m</span>
           <span className="text-light-red mb-1 -ml-[5px]">e</span>
@@ -67,22 +73,22 @@ export default function AboutMe() {
         <div className="flex"></div>
       </div>
       <motion.div
-        ref={ref}
-        animate={controls}
-        initial={{ opacity: 0 }}
-        className="absolute left-[-50%] lg:left-[-10%] lg:top-[-9%]  xl:top-[-12%] w-[600px] xl:w-[650px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
+        ref={ref1}
+        animate={controls1}
+        initial={{ opacity: 0, x: -50 }}
+        className="absolute left-[-5%] lg:left-[-10%] top-[10%] lg:top-[15%]  xl:top-[8%] w-[450px] md:w-[550px] lg:w-[500px] xl:w-[600px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
       ></motion.div>
       <motion.div
-        ref={ref}
-        animate={controls}
+        ref={ref2}
+        animate={controls2}
         initial={{ opacity: 0 }}
-        className="absolute left-[40%] lg:left-[80%] lg:top-[10%]  xl:left-[calc(50%-260px)] top-[15%] xl:top-[-8%] w-[400px] xl:w-[600px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
+        className="absolute hidden lg:block  left-[40%] lg:left-[38%] lg:top-[23%]  xl:left-[calc(50%-200px)] top-[15%] xl:top-[15%] w-[460px] lg:w-[400px] xl:w-[500px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
       ></motion.div>
       <motion.div
-        ref={ref}
-        animate={controls}
+        ref={ref3}
+        animate={controls3}
         initial={{ opacity: 0 }}
-        className="absolute hidden lg:block lg:right-[12%] xl:right-[-10%] top-[1%] w-[500px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
+        className="absolute right-[0%] lg:right-[-10%] xl:right-[-2%] top-[20%] md:top-[25%] lg:top-[30%] w-[350px] lg:w-[350px] xl:w-[400px] aspect-square  rounded-full bg-red-500/30 blur-[80px] opacity-35 -z-10"
       ></motion.div>
     </section>
   );
