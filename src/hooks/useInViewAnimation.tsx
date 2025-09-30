@@ -1,17 +1,28 @@
 import { useEffect, useRef } from "react";
 import { useInView, useAnimation } from "framer-motion";
 
-export const useInViewAnimation = () => {
+export const useInViewAnimation = ({
+  amount,
+  once,
+  opacity,
+  duration,
+}: {
+  amount: number;
+  once: boolean;
+  opacity: number;
+  duration: number;
+}) => {
   const ref = useRef(null);
   const controls = useAnimation();
-  const isInView = useInView(ref, { once: false, amount: 0.9 }); // Trigger when ?? % of the element is visible
+  const isInView = useInView(ref, { once, amount }); // Trigger when ?? % of the element is visible
 
   useEffect(() => {
     if (isInView) {
       controls.start({
-        opacity: 0.4,
+        opacity: opacity,
         x: 0,
-        transition: { duration: 0.5, ease: "easeInOut" },
+        y: 0,
+        transition: { duration: duration, ease: "easeInOut" },
       });
     } else {
       controls.start({ opacity: 0 });

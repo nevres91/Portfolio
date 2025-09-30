@@ -4,64 +4,21 @@ import {
   useTransform,
   MotionValue,
   useSpring,
-  type Variants,
 } from "framer-motion";
 import ScrollAnimationIcon from "../../../../assets/fonts/ScrollAnimationIcon";
 import { scrollToElement } from "../../../../utils/scroll";
-import { useMediaQuery } from "../../../../hooks/useMediaQuery";
 import { useRef } from "react";
+import {
+  getPortfolioYRange,
+  getWebsiteYRange,
+  getWelcomeYRange,
+} from "../../../../utils/parallaxRanges";
+import {
+  fadeInFromBottom,
+  fadeInFromTop,
+} from "../../../../utils/animationVariants";
 
 export default function Home() {
-  // Animation variants using Framer Motion's Variants type
-
-  const fadeIn: Variants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-  };
-  const fadeInFromTop: Variants = {
-    initial: { opacity: 0, y: -50 },
-    animate: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
-  const fadeInFromBottom: Variants = {
-    initial: { opacity: 0, y: 50 },
-    animate: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
-  // Detect screen size breakpoints (Tailwind: sm=640px, md=768px, lg=1024px)
-  const isSm: boolean = useMediaQuery("(min-width: 640px)");
-  const isMd: boolean = useMediaQuery("(min-width: 768px)");
-  const isLg: boolean = useMediaQuery("(min-width: 1024px)");
-
-  // Determine y movement based on screen size
-  const portfolioYRange: [number, number] = isLg
-    ? [0, 500]
-    : isMd
-    ? [0, 400]
-    : isSm
-    ? [0, 300]
-    : [0, 500];
-  const WelcomeRange: [number, number] = isLg
-    ? [0, 100]
-    : isMd
-    ? [0, 120]
-    : isSm
-    ? [0, 160]
-    : [0, 130];
-  const websiteYRange: [number, number] = isLg
-    ? [0, -250]
-    : isMd
-    ? [0, -100]
-    : isSm
-    ? [0, -30]
-    : [0, -30];
-
   // Track scroll progress for the section
   const sectionRef = useRef(null);
   const { scrollYProgress }: { scrollYProgress: MotionValue<number> } =
@@ -71,20 +28,21 @@ export default function Home() {
     });
 
   // Parallax transformations
-  const portfolioY: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 1], portfolioYRange),
-    {
-      stiffness: 200,
-      damping: 30,
-    }
-  );
   const welcomeY: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 1], WelcomeRange),
+    useTransform(scrollYProgress, [0, 1], getWelcomeYRange()),
     {
       stiffness: 200,
       damping: 30,
     }
   );
+  const portfolioY: MotionValue<number> = useSpring(
+    useTransform(scrollYProgress, [0, 1], getPortfolioYRange()),
+    {
+      stiffness: 200,
+      damping: 30,
+    }
+  );
+
   const portfolioOpacity: MotionValue<number> = useSpring(
     useTransform(scrollYProgress, [0, 0.7], [1, 0]),
     {
@@ -93,7 +51,7 @@ export default function Home() {
     }
   );
   const websiteY: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 1], websiteYRange),
+    useTransform(scrollYProgress, [0, 1], getWebsiteYRange()),
     {
       stiffness: 200,
       damping: 30,
@@ -106,12 +64,10 @@ export default function Home() {
       damping: 30,
     }
   );
-
-  // Contact button opacity with smoother fade
   const contactOpacity: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [1, 0]),
+    useTransform(scrollYProgress, [0, 0.4], [1, 0]),
     {
-      stiffness: 120,
+      stiffness: 200,
       damping: 30,
     }
   );
@@ -182,11 +138,10 @@ export default function Home() {
         </motion.h1>
       </div>
       <motion.a
-        variants={fadeIn}
-        initial="initial"
-        animate="animate"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         style={{ opacity: contactOpacity }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 2.5 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 2 }}
         href="#contact"
         onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
           e.preventDefault();

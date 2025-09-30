@@ -67,7 +67,12 @@ export const skills = [
 
 export const Skills = () => {
   // Use separate hook instances for each circle
-  const { ref: ref, controls: controls } = useInViewAnimation();
+  const { ref: ref, controls: controls } = useInViewAnimation({
+    amount: 0.9,
+    once: false,
+    opacity: 0.4,
+    duration: 0.5,
+  });
 
   return (
     <section
