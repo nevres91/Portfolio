@@ -28,7 +28,7 @@ export default function AboutMe() {
     duration: 0.5,
   });
   const { ref: leftContent, controls: controls4 } = useInViewAnimation({
-    amount: 1,
+    amount: 0.2,
     once: true,
     opacity: 1,
     duration: 0.8,
@@ -118,7 +118,7 @@ export default function AboutMe() {
           <span className="text-light-red mb-1 -ml-[5px]">e</span>
         </motion.div>
       </div>
-      <motion.div //CONTENT
+      <div //CONTENT
         className="flex flex-col md:flex-row  items-center justify-between mt-5 sm:mt-10 relative"
       >
         <motion.div //LEFT
@@ -188,7 +188,7 @@ export default function AboutMe() {
           </motion.div>
         </motion.div>
         <div className="flex"></div>
-      </motion.div>
+      </div>
       <motion.div
         ref={ref}
         animate={controls}
