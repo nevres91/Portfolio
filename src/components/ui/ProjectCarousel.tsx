@@ -61,7 +61,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   }, [isTransitioning]);
 
   return (
-    <div className="relative w-full p-2 md:p-8">
+    <div className="relative w-full p-2 md:p-8  translate-y-[30px]">
       <div className="overflow-hidden w-full flex">
         <div
           className="flex w-full transition-transform duration-300 ease-in-out"

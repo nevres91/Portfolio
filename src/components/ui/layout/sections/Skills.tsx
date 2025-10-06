@@ -129,34 +129,7 @@ export const Skills = () => {
       target: skillsRef,
       offset: ["start end", "end center"],
     });
-  const greetingX: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 0.6], [200, 0]),
-    {
-      stiffness: 200,
-      damping: 30,
-    }
-  );
-  const nameX: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 0.6], [400, 0]),
-    {
-      stiffness: 200,
-      damping: 30,
-    }
-  );
-  const textY: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 0.6], [600, 0]),
-    {
-      stiffness: 200,
-      damping: 30,
-    }
-  );
-  const buttonsY: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 0.6], [800, 0]),
-    {
-      stiffness: 200,
-      damping: 30,
-    }
-  );
+
   // -------------------TITLE--------------------
   const skillsTitleY: MotionValue<number> = useSpring(
     useTransform(scrollYProgress, [0, 0.5], [0, -190]),
@@ -205,14 +178,6 @@ export const Skills = () => {
       damping: 30,
     }
   );
-  // -------------------Individual Skills--------------------
-  const skill: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 0.5], [-50, 0]),
-    {
-      stiffness: 200,
-      damping: 30,
-    }
-  );
 
   // Use separate hook instances for each circle
   const { ref: ref, controls: controls } = useInViewAnimation({
@@ -227,7 +192,7 @@ export const Skills = () => {
       style={{ y: skillsSectionY, opacity: contentOpacity }}
       ref={skillsRef}
       id="skills"
-      className="flex flex-col max-w-7xl relative items-center w-full   justify-center"
+      className="flex flex-col max-w-7xl relative items-center w-full   justify-center "
     >
       <motion.div // TITLE
         style={{ opacity: titleOpacity, y: skillsTitleY }}
