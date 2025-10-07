@@ -83,19 +83,19 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
           transition={{ duration: 5, ease: "easeOut", delay: 0 }}
-          className="absolute left-[-25%] md:left-[-10%] lg:left-[-15%] w-[300px] md:w-[390px] lg:w-[550px] aspect-square rounded-full bg-red-500/30 blur-[80px] opacity-40 z-20"
+          className="absolute left-[-25%] md:left-[-10%] lg:left-[-15%] w-[300px] md:w-[390px] lg:w-[550px] aspect-square rounded-full bg-red-500/50 md:bg-red-500/30 blur-[80px] opacity-40 z-20"
         ></motion.div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
           transition={{ duration: 5, ease: "easeOut", delay: 0 }}
-          className="absolute left-[43%] md:left-[42%] lg:left-[45%] w-[220px] md:w-[290px] lg:w-[350px] aspect-square rounded-full bg-red-500/30 blur-[80px] opacity-40 z-20"
+          className="absolute left-[43%] md:left-[42%] lg:left-[45%] w-[220px] md:w-[290px] lg:w-[350px] aspect-square rounded-full bg-red-500/50 md:bg-red-500/30 blur-[80px] opacity-40 z-20"
         ></motion.div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
           transition={{ duration: 5, ease: "easeOut", delay: 0 }}
-          className="absolute right-[-20%] md:right-[-6%] lg:right-[-10%] w-[120px] md:w-[190px] lg:w-[250px] aspect-square rounded-full bg-red-500/30 blur-[80px] opacity-40 z-20"
+          className="absolute right-[-20%] md:right-[-6%] lg:right-[-10%] w-[120px] md:w-[190px] lg:w-[250px] aspect-square rounded-full bg-red-500/50 md:bg-red-500/30 blur-[80px] opacity-40 z-20"
         ></motion.div>
         <motion.h1
           style={{ y: welcomeY }}

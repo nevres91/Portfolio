@@ -60,7 +60,7 @@ export const projects: Project[] = [
 
 export default function Projects() {
   useCardGlowEffect();
-  const { ref: ref, controls: controls } = useInViewAnimation({
+  const { ref: ref } = useInViewAnimation({
     amount: 0.9,
     once: false,
     opacity: 0.6,
@@ -111,7 +111,7 @@ export default function Projects() {
     [2, 0]
   );
   const projectsSectionY: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0.8, 1.5], [0, -700]),
+    useTransform(scrollYProgress, [0.9, 1], [0, -700]),
     {
       stiffness: 200,
       damping: 30,
@@ -126,10 +126,13 @@ export default function Projects() {
 
   return (
     <motion.section //Container
-      style={{ y: projectsSectionY, opacity: contentOpacity }}
+      style={{
+        y: projectsSectionY,
+        opacity: contentOpacity,
+      }}
       ref={projectsRef}
       id="projects"
-      className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative  w-full translate-y-[-290px] justify-center"
+      className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative  w-full translate-y-[-290px]  pt-[50px]"
     >
       <motion.div //TITLE
         style={{ opacity: titleOpacity, y: projectsTitleY }}
