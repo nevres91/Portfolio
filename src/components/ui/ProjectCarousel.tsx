@@ -80,6 +80,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                 id={project.id}
                 title={project.title}
                 image={project.image}
+                liveUrl={project.liveUrl}
               />
             </div>
           ))}

@@ -23,6 +23,7 @@ const Marquee = ({ projects }: MarqueeProps) => {
                 id={project.id}
                 title={project.title}
                 image={project.image}
+                liveUrl={project.liveUrl}
               />
             </div>
           ))}

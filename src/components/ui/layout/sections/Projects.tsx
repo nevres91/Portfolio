@@ -10,55 +10,67 @@ import {
   MotionValue,
   useSpring,
 } from "framer-motion";
+import { useProjects } from "../../../../context/ProjectsContext";
 
-export const projects: Project[] = [
-  {
-    id: "1",
-    title: "Project 1",
-    description: "A cool project",
-    image: "/src/assets/img/dummy_image.jpg",
-  },
-  {
-    id: "2",
-    title: "Project 2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa cumque non vel suscipit eaque. Nam maxime sunt doloremque sit voluptates quasi iste minus distinctio reprehenderit dolores natus minima omnis repudiandae excepturi eum illum est recusandae necessitatibus corporis sed accusamus, ea aspernatur eius. Nesciunt enim ut, dolor molestiae libero impedit? Similique natus laboriosam pariatur et aliquam vitae voluptatum illo voluptatem.",
-    image: "/src/assets/img/project_2_image.png",
-    color: "purple",
-  },
-  {
-    id: "3",
-    title: "Project 3",
-    description: "Another cool project",
-    image: "/src/assets/img/dummy_image.jpg",
-  },
-  {
-    id: "4",
-    title: "Project 4",
-    description: "Another cool project",
-    image: "/src/assets/img/dummy_image.jpg",
-  },
-  {
-    id: "5",
-    title: "Project 5",
-    description: "Another cool project",
-    image: "/src/assets/img/dummy_image.jpg",
-  },
-  {
-    id: "6",
-    title: "Project 6",
-    description: "Another cool project",
-    image: "/src/assets/img/dummy_image.jpg",
-  },
-  {
-    id: "7",
-    title: "Project 7",
-    description: "Another cool project",
-    image: "/src/assets/img/dummy_image.jpg",
-  },
-];
+// export const projects: Project[] = [
+//   {
+//     id: "1",
+//     title: "WeDoIt",
+//     description:
+//       "A user-friendly app crafted for couples to manage shared tasks effortlessly. Create, assign, and track to-dos together, keeping your household or plans in sync. With a clean interface and real-time updates, it makes teamwork simple and fun, ensuring you both stay on top of what matters.",
+//     image: "/src/assets/img/wedoit_image.jpg",
+//     githubUrl: "https://github.com/nevres91/WeDoIt",
+//     liveUrl: "https://coupledo.netlify.app/",
+//     used_skills: [0, 1, 2, 4, 5, 6, 8],
+//   },
+//   {
+//     id: "2",
+//     title: "Project 2",
+//     description:
+//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa cumque non vel suscipit eaque. Nam maxime sunt doloremque sit voluptates quasi iste minus distinctio reprehenderit dolores natus minima omnis repudiandae excepturi eum illum est recusandae necessitatibus corporis sed accusamus, ea aspernatur eius. Nesciunt enim ut, dolor molestiae libero impedit? Similique natus laboriosam pariatur et aliquam vitae voluptatum illo voluptatem.",
+//     image: "/src/assets/img/motion_magic_image.jpg",
+//     color: "purple",
+//     liveUrl: "https://coupledo.netlify.app/",
+//   },
+//   {
+//     id: "3",
+//     title: "Project 3",
+//     description: "Another cool project",
+//     image: "/src/assets/img/dummy_image.jpg",
+//     liveUrl: "https://coupledo.netlify.app/",
+//   },
+//   {
+//     id: "4",
+//     title: "Project 4",
+//     description: "Another cool project",
+//     image: "/src/assets/img/dummy_image.jpg",
+//     liveUrl: "https://coupledo.netlify.app/",
+//   },
+//   {
+//     id: "5",
+//     title: "Project 5",
+//     description: "Another cool project",
+//     image: "/src/assets/img/dummy_image.jpg",
+//     liveUrl: "https://coupledo.netlify.app/",
+//   },
+//   {
+//     id: "6",
+//     title: "Project 6",
+//     description: "Another cool project",
+//     image: "/src/assets/img/dummy_image.jpg",
+//     liveUrl: "https://coupledo.netlify.app/",
+//   },
+//   {
+//     id: "7",
+//     title: "Project 7",
+//     description: "Another cool project",
+//     image: "/src/assets/img/dummy_image.jpg",
+//     liveUrl: "https://coupledo.netlify.app/",
+//   },
+// ];
 
 export default function Projects() {
+  const { projects } = useProjects();
   useCardGlowEffect();
   const { ref: ref } = useInViewAnimation({
     amount: 0.9,

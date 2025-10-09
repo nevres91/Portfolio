@@ -12,6 +12,7 @@ import { useMediaQuery } from "../../../../hooks/useMediaQuery";
 
 export const skills = [
   {
+    index: 0,
     title: "HTML",
     url: "/src/assets/img/HTML.png",
     alt: "An icon of HTML logo",
@@ -20,6 +21,7 @@ export const skills = [
     offsetSm: 300,
   },
   {
+    index: 1,
     title: "CSS",
     url: "/src/assets/img/Css.png",
     alt: "An icon of CSS logo",
@@ -28,6 +30,7 @@ export const skills = [
     offsetSm: 300,
   },
   {
+    index: 2,
     title: "Tailwind CSS",
     url: "/src/assets/img/Tailwind.png",
     alt: "An icon of Tailwind CSS logo",
@@ -36,6 +39,7 @@ export const skills = [
     offsetSm: 400,
   },
   {
+    index: 3,
     title: "Material UI",
     url: "/src/assets/img/MUI.png",
     alt: "An icon of Material UI logo",
@@ -44,6 +48,7 @@ export const skills = [
     offsetSm: 400,
   },
   {
+    index: 4,
     title: "Javascript",
     url: "/src/assets/img/JS.png",
     alt: "An icon of Javascrypt logo",
@@ -52,6 +57,7 @@ export const skills = [
     offsetSm: 500,
   },
   {
+    index: 5,
     title: "Typescript",
     url: "/src/assets/img/Typescript.png",
     alt: "An icon of Typescript logo",
@@ -60,6 +66,7 @@ export const skills = [
     offsetSm: 500,
   },
   {
+    index: 6,
     title: "React",
     url: "/src/assets/img/react.png",
     alt: "An icon of React logo",
@@ -68,6 +75,7 @@ export const skills = [
     offsetSm: 600,
   },
   {
+    index: 7,
     title: "Vite",
     url: "/src/assets/img/Vite.png",
     alt: "An icon of Vite logo",
@@ -76,6 +84,7 @@ export const skills = [
     offsetSm: 600,
   },
   {
+    index: 8,
     title: "Firebase",
     url: "/src/assets/img/Firebase.png",
     alt: "An icon of Firebase logo",
@@ -84,6 +93,7 @@ export const skills = [
     offsetSm: 700,
   },
   {
+    index: 9,
     title: "Figma",
     url: "/src/assets/img/FIGMA.png",
     alt: "An icon of Figma logo",
@@ -92,6 +102,7 @@ export const skills = [
     offsetSm: 700,
   },
   {
+    index: 10,
     title: "Cinema4D",
     url: "/src/assets/img/Cinema4D.png",
     alt: "An icon of Cinema4D logo",
@@ -100,6 +111,7 @@ export const skills = [
     offsetSm: 800,
   },
   {
+    index: 11,
     title: "Photoshop",
     url: "/src/assets/img/Photoshop.png",
     alt: "An icon of Photoshop logo",

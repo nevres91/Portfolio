@@ -1,7 +1,30 @@
 import { Link } from "react-router-dom";
 import type { Project } from "../../types/project";
+import { useEffect } from "react";
+import { a } from "motion/react-client";
 
-export const ProjectCardMinimal: React.FC<Project> = ({ id, title, image }) => {
+export const ProjectCardMinimal: React.FC<Project> = ({
+  id,
+  title,
+  image,
+  liveUrl,
+}) => {
+  console.log("One card minimal rendered");
+  // console.log(
+  //   `ProjectCardMinimal [${id}]: liveUrl =`,
+  //   liveUrl,
+  //   `Type:`,
+  //   typeof liveUrl
+  // );
+
+  // useEffect(() => {
+  //   console.log(`ProjectCardMinimal [${id}]: liveUrl updated to`, liveUrl);
+  // }, [liveUrl, id]);
+  // console.log(liveUrl);
+
+  // useEffect(() => {
+  //   console.log(liveUrl);
+  // }, [liveUrl]);
   return (
     <div //CONTAINER
       key={id}
@@ -30,9 +53,21 @@ export const ProjectCardMinimal: React.FC<Project> = ({ id, title, image }) => {
         <div //Bottom
           className="flex justify-between w-full items-center mt-1 z-10"
         >
-          <p className="font-jura-light text-xs text-blue-400 cursor-pointer hover:text-blue-500 transition-all ease-in-out duration-50">
-            Live Demo
-          </p>
+          {/* Debug display */}
+          {liveUrl && liveUrl !== "" ? (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-jura-light text-sm text-blue-400 cursor-pointer hover:text-blue-500 transition-all ease-in-out duration-50 z-30"
+            >
+              Live Demo
+            </a>
+          ) : (
+            <span className="font-jura-light text-sm text-gray-500">
+              No Demo
+            </span>
+          )}
           <Link
             to={`/project/${id}`}
             onClick={() => window.scrollTo(0, 0)}

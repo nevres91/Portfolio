@@ -6,6 +6,7 @@ export const ProjectCard: React.FC<Project> = ({
   id,
   title,
   image,
+  liveUrl,
 }) => {
   return (
     <div //CONTAINER
@@ -41,9 +42,18 @@ export const ProjectCard: React.FC<Project> = ({
         <div //Bottom
           className="flex justify-between w-full items-center mt-1 z-10"
         >
-          <p className="font-jura-light text-sm text-blue-400 cursor-pointer hover:text-blue-500 transition-all ease-in-out duration-50">
-            Live Demo
-          </p>
+          {liveUrl ? (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-jura-light text-sm text-blue-400 cursor-pointer hover:text-blue-500 transition-all ease-in-out duration-50"
+            >
+              Live Demo
+            </a>
+          ) : (
+            ""
+          )}
           <Link
             to={`/project/${id}`}
             onClick={() => window.scrollTo(0, 0)}

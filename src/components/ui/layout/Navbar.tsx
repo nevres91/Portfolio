@@ -4,7 +4,7 @@ import { scrollToElement } from "../../../utils/scroll";
 import { useScrollFade } from "../../../hooks/useScrollFade";
 import { motion } from "framer-motion";
 
-export default function Navbar() {
+export default function Navbar({ animate }: { animate: boolean }) {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const opacity = useScrollFade(100);
@@ -56,9 +56,9 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
+      initial={animate ? { opacity: 0, y: -50 } : false}
+      animate={animate ? { opacity: 1, y: 0 } : {}}
+      transition={animate ? { duration: 1, ease: "easeOut", delay: 1.5 } : {}}
       className={`fixed w-full p-0 md:p-4 z-90 ${
         opacity === 1 ? "" : "backdrop-blur-3xl bg-black/20"
       } ${

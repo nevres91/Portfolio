@@ -6,11 +6,13 @@ export const useInViewAnimation = ({
   once,
   opacity,
   duration,
+  delay,
 }: {
   amount: number;
   once: boolean;
   opacity: number;
   duration: number;
+  delay?: number;
 }) => {
   const ref = useRef(null);
   const controls = useAnimation();
@@ -22,7 +24,15 @@ export const useInViewAnimation = ({
         opacity: opacity,
         x: 0,
         y: 0,
-        transition: { duration: duration, ease: "easeInOut" },
+        scale: 1,
+        transition: {
+          duration: duration,
+          ease: "easeInOut",
+          type: "spring",
+          stiffness: 200,
+          damping: 30,
+          delay: delay,
+        },
       });
     } else {
       controls.start({ opacity: 0 });
