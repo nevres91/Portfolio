@@ -28,7 +28,7 @@ export const ProjectCardMinimal: React.FC<Project> = ({
   return (
     <div //CONTAINER
       key={id}
-      className="container flex relative w-[100%] aspect-[4/5] sm:w-[200px] sm:h-[250px] overflow-hidden rounded-lg hover:translate-y-[-5px] duration-100 border-white/20 border sm:border-none sm:shadow-[0px_0px_21px_0px_rgba(255,255,255,0.25)] z-50"
+      className="container flex relative w-[90%] aspect-[4/5] sm:w-[200px] sm:h-[250px] overflow-hidden rounded-lg hover:translate-y-[-5px] duration-100 border-white/20 border sm:border-none sm:shadow-[0px_0px_21px_0px_rgba(255,255,255,0.25)] z-50"
     >
       <div //Card Content
         className={`flex flex-col justify-between card w-full h-full rounded-xl cursor-default p-3  items-center text-start 

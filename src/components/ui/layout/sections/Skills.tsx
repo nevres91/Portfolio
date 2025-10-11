@@ -204,7 +204,7 @@ export const Skills = () => {
       style={{ y: skillsSectionY, opacity: contentOpacity }}
       ref={skillsRef}
       id="skills"
-      className="flex flex-col max-w-7xl relative items-center w-full   justify-center "
+      className="flex flex-col max-w-7xl relative items-center w-full   justify-center z-50 "
     >
       <motion.div // TITLE
         style={{ opacity: titleOpacity, y: skillsTitleY }}

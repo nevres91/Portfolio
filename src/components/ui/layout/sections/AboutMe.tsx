@@ -12,6 +12,7 @@ import {
   getAboutMeSectionRange,
   getAboutMeTitleRange,
 } from "../../../../utils/parallaxRanges";
+import { toast } from "react-toastify";
 
 export default function AboutMe() {
   // Track scroll progress for the section
@@ -88,6 +89,11 @@ export default function AboutMe() {
     [2, 0]
   );
 
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText("nevres@example.com");
+    toast.success("📋 Email copied!");
+  };
+
   return (
     <motion.section
       style={{ y: aboutMeSectionY, opacity: contentOpacity }}
@@ -96,7 +102,7 @@ export default function AboutMe() {
       id="about"
       ref={aboutMeRef}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative h-screen  justify-center"
+      className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative h-screen  justify-center z-60"
     >
       <div //ABOUT ME TITLE
         className="flex justify-center items-center h-fit"
@@ -171,20 +177,56 @@ export default function AboutMe() {
             src="/src/assets/img/nevres_portrait.png"
             alt="Portrait of Nevres Muratović"
           />
-          <motion.p
+          {/* <motion.p
             style={{ y: textY }}
             className="font-jura-light text-light/50  md:self-center"
           >
             nevres_muratovic@hotmail.com
+          </motion.p> */}
+          <motion.p
+            style={{ y: textY }}
+            onClick={() => copyEmail()}
+            className="cursor-pointer font-jura-light text-light/50  md:self-center"
+          >
+            nevres_muratovic@hotmail.com
           </motion.p>
+
           <motion.div //SOCIAL ICONS
             style={{ y: buttonsY }}
             className="flex text-[42px] justify-between mt-4 text-light/80  gap-5 md:gap-0 md:w-[90%] "
           >
-            <i className="fa-brands fa-facebook social-icon p-2 rounded-full"></i>
-            <i className="fa-brands fa-linkedin social-icon p-2 rounded-md"></i>
-            <i className="fa-brands fa-github social-icon p-2 rounded-full"></i>
-            <i className="fa-brands fa-instagram social-icon p-2 rounded-2xl"></i>
+            <a
+              className="flex"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/nevres.muratovic"
+            >
+              <i className="fa-brands fa-facebook social-icon p-2 rounded-full"></i>
+            </a>
+            <a
+              className="flex"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/nevres-muratovic-9718a4321/"
+            >
+              <i className="fa-brands fa-linkedin social-icon p-2 rounded-md"></i>
+            </a>
+            <a
+              className="flex"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/nevres91"
+            >
+              <i className="fa-brands fa-github social-icon p-2 rounded-full"></i>
+            </a>
+            <a
+              className="flex"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/muratovicnevres/?hl=en"
+            >
+              <i className="fa-brands fa-instagram social-icon p-2 rounded-2xl"></i>
+            </a>
           </motion.div>
         </motion.div>
         <div className="flex"></div>

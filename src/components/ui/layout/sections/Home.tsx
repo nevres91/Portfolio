@@ -64,12 +64,10 @@ export default function Home() {
       damping: 30,
     }
   );
-  const contactOpacity: MotionValue<number> = useSpring(
-    useTransform(scrollYProgress, [0, 0.4], [1, 0]),
-    {
-      stiffness: 200,
-      damping: 30,
-    }
+  const contactOpacity: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 0.4],
+    [1, 0]
   );
 
   return (
@@ -97,6 +95,7 @@ export default function Home() {
           transition={{ duration: 5, ease: "easeOut", delay: 0 }}
           className="absolute right-[-20%] md:right-[-6%] lg:right-[-10%] w-[120px] md:w-[190px] lg:w-[250px] aspect-square rounded-full bg-red-500/50 md:bg-red-500/30 blur-[80px] opacity-40 z-20"
         ></motion.div>
+
         <motion.h1
           style={{ y: welcomeY }}
           variants={fadeInFromTop}
@@ -138,10 +137,10 @@ export default function Home() {
         </motion.h1>
       </div>
       <motion.a
+        style={{ opacity: contactOpacity }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        style={{ opacity: contactOpacity }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 2 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 2 }}
         href="#contact"
         onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
           e.preventDefault();

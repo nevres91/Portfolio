@@ -71,7 +71,15 @@ export default function ProjectDetails() {
   });
   const { ref: otherProjects, controls: otherProjectsControls } =
     useInViewAnimation({
-      amount: 0.2,
+      amount: 0.1,
+      once: true,
+      opacity: 1,
+      duration: 1,
+      delay: 1,
+    });
+  const { ref: otherProjectsMobile, controls: otherProjectsMobileControls } =
+    useInViewAnimation({
+      amount: 0,
       once: true,
       opacity: 1,
       duration: 1,
@@ -177,7 +185,7 @@ export default function ProjectDetails() {
         <motion.div //Other Projects desktop
           ref={otherProjects}
           animate={otherProjectsControls}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: -50 }}
           className=" flex-col hidden sm:flex"
         >
           <h1 className="font-jura text-3xl text-light self-center">
@@ -186,20 +194,20 @@ export default function ProjectDetails() {
           <Marquee projects={projects} />
         </motion.div>
         <motion.div //Other projects mobile
-          ref={otherProjects}
-          animate={otherProjectsControls}
+          ref={otherProjectsMobile}
+          animate={otherProjectsMobileControls}
           initial={{ opacity: 0, y: 50 }}
           className="sm:hidden z-50"
         >
           <h1 className="font-jura text-xl text-light/80 self-center mt-5 mb-2">
             All Projects
           </h1>
-          <div className="grid sm:hidden grid-cols-2 grid-rows-1   gap-4 z-50">
+          <div className="grid sm:hidden grid-cols-2 grid-rows-1    gap-0 md:gap-4 z-50">
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-2 flex items-center justify-center"
-                style={{ minWidth: `200px` }}
+                className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-[1px] py-2 flex items-center justify-center"
+                style={{ minWidth: `170px`, maxWidth: "250px" }}
               >
                 <ProjectCardMinimal
                   description={project.description}

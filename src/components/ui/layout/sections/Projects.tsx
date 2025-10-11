@@ -144,7 +144,7 @@ export default function Projects() {
       }}
       ref={projectsRef}
       id="projects"
-      className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative  w-full translate-y-[-290px]  pt-[50px]"
+      className="flex flex-col mx-[10px] md:mx-[50px] lg:mx-[120px] max-w-7xl relative  w-full translate-y-[-290px]  pt-[100px]"
     >
       <motion.div //TITLE
         style={{ opacity: titleOpacity, y: projectsTitleY }}

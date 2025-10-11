@@ -5,7 +5,9 @@ import {
   MotionValue,
   useSpring,
 } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import Button from "../../Button";
 
 export default function Contact() {
   // Track scroll progress for the section
@@ -60,6 +62,42 @@ export default function Contact() {
     [0, 1]
   );
 
+  // Form state
+  const [formData, setFormData] = useState({
+    from_name: "",
+    from_email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
+
+  // Handle input changes
+  const handleChange = (e: any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_tcwheg8", // Replace with your EmailJS Service ID
+        "template_prvk9yl", // Replace with your EmailJS Template ID
+        formData,
+        "8pIO-22VeYIUKOeXc" // Replace with your EmailJS User ID
+      )
+      .then(
+        () => {
+          setStatus("Message sent successfully!");
+          setFormData({ from_name: "", from_email: "", message: "" }); // Reset form
+        },
+        (error) => {
+          setStatus("Failed to send message. Please try again.");
+          console.error("EmailJS error:", error);
+        }
+      );
+  };
+
   return (
     <motion.section
       style={{
@@ -84,7 +122,8 @@ export default function Contact() {
           Contact Me
         </motion.h2>
       </motion.div>
-      <div // Body
+      <form // Body
+        onSubmit={handleSubmit}
         className="flex flex-col mt-10 sm:flex-row w-[95%] lg:w-[80%] h-[70%] font-jura-light text-light bg-bloody rounded-xl p-5"
       >
         <div // LEFT SIDE
@@ -116,20 +155,38 @@ export default function Contact() {
           <input
             className="p-2 text-black font-jura bg-light rounded-md my-2 w-full"
             type="text"
+            name="from_name"
             placeholder="Enter Your Name"
+            value={formData.from_name}
+            onChange={handleChange}
+            required
           />
           <input
             className="p-2 text-black font-jura bg-light rounded-md my-2 w-full"
             type="email"
+            name="from_email"
             placeholder="Enter Your Email"
+            value={formData.from_email}
+            onChange={handleChange}
+            required
           />
           <textarea
             className="p-2 text-black font-jura bg-light rounded-md my-2 w-full h-full min-h-[100px]"
             name="message"
             placeholder="Enter Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
           ></textarea>
+          <button
+            type="submit"
+            className="p-2 bg-red-600 text-light font-jura rounded-md my-2 w-full hover:bg-red-700 transition-colors cursor-pointer shadow-xl "
+          >
+            Send Message
+          </button>
+          {status && <p className="text-light/80 mt-2">{status}</p>}
         </div>
-      </div>
+      </form>
       <motion.div
         style={{ opacity: titleOpacity }}
         className="absolute left-[0] hidden md:block sm:left-[calc(50%-300px)] md:left-[-0%] top-[12%] md:top-[15%] w-[600px] aspect-square rounded-full bg-red-500/50 md:bg-red-500/35 blur-[80px] opacity-40 -z-10"
