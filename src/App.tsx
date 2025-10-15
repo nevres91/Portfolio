@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 import Components from "./pages/Components";
 import ProjectDetails from "./pages/ProjectDetails";
 import { ToastContainer, toast } from "react-toastify";
+import Resume from "./pages/resume";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/components" element={<Components />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
         </Routes>
       </BrowserRouter>

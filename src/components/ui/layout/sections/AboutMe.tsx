@@ -13,8 +13,10 @@ import {
   getAboutMeTitleRange,
 } from "../../../../utils/parallaxRanges";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutMe() {
+  const navigate = useNavigate();
   // Track scroll progress for the section
   const aboutMeRef = useRef(null);
   const { scrollYProgress }: { scrollYProgress: MotionValue<number> } =
@@ -163,7 +165,9 @@ export default function AboutMe() {
           className="flex w-full sm:w-[300px] justify-between mt-4 md:mt-10 md:absolute bottom-0 left-0 "
         >
           <Button width="w-[48%] sm:w-auto">Read More</Button>
-          <Button width="w-[48%] sm:w-auto">Download Resume</Button>
+          <Button onClick={() => navigate("/resume")} width="w-[48%] sm:w-auto">
+            Download Resume
+          </Button>
         </motion.div>
         <motion.div //RIGHT
           ref={leftContent}

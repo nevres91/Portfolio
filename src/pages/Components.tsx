@@ -5,7 +5,7 @@ import Navbar from "../components/ui/layout/Navbar";
 export default function Components() {
   return (
     <>
-      <Navbar />
+      <Navbar animate={false} />
       <div className="min-h-screen bg-black text-white p-8">
         <h1 className="text-4xl font-bold text-cyan-400 mb-8">UI Components</h1>
         <div className="space-y-8">
