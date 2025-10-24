@@ -1,4 +1,3 @@
-import type { Project } from "../../../../types/project";
 import { useRef } from "react";
 import useCardGlowEffect from "../../../../hooks/useCardGlowEffect";
 import { ProjectCarousel } from "../../ProjectCarousel";

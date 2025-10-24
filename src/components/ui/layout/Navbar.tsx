@@ -82,7 +82,7 @@ export default function Navbar({ animate }: { animate: boolean }) {
                   ? "text-light-red hover:bg-light-red hover:text-light"
                   : "text-light hover:bg-light hover:text-light-red"
               } p-1 px-2 rounded-md transition-colors`}
-              onClick={(e) => {
+              onClick={() => {
                 if (isHomepage && item.label !== "Components") {
                   scrollToElement(item.href);
                 }
@@ -122,7 +122,7 @@ export default function Navbar({ animate }: { animate: boolean }) {
                       : `/#${item.href}`
                   }
                   className="block w-full p-2"
-                  onClick={(e) => {
+                  onClick={() => {
                     if (isHomepage && item.label !== "Components") {
                       scrollToElement(item.href);
                     }

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import type { Project } from "../../types/project";
-import { useEffect } from "react";
-import { a } from "motion/react-client";
 
 export const ProjectCardMinimal: React.FC<Project> = ({
   id,

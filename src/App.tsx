@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Components from "./pages/Components";
 import ProjectDetails from "./pages/ProjectDetails";
-import { ToastContainer, toast } from "react-toastify";
-import Resume from "./pages/resume";
+import { ToastContainer } from "react-toastify";
+import Resume from "./pages/Resume";
 
 function App() {
   return (

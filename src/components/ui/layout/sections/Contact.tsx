@@ -7,7 +7,6 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import Button from "../../Button";
 
 export default function Contact() {
   // Track scroll progress for the section
