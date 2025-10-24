@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useInViewAnimation } from "../../../../hooks/useInViewAnimation";
 import Button from "../../Button";
+import portrait from "/src/assets/img/nevres_portrait.png";
 import {
   motion,
   useScroll,
@@ -178,7 +179,7 @@ export default function AboutMe() {
           <motion.img
             style={{ y: nameX }}
             className="w-[220px] h-[329px] object-cover hidden md:block z-50"
-            src="/src/assets/img/nevres_portrait.png"
+            src={portrait}
             alt="Portrait of Nevres Muratović"
           />
           <motion.p

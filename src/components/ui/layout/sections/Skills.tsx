@@ -10,12 +10,24 @@ import {
 } from "framer-motion";
 import { useMediaQuery } from "../../../../hooks/useMediaQuery";
 import css_image from "/src/assets/Css.png";
+import HTML_image from "/src/assets/img/HTML.png";
+import tailwind_image from "/src/assets/img/Tailwind.png";
+import materialui_image from "/src/assets/img/MUI.png";
+import js_image from "/src/assets/img/JS.png";
+import ts_image from "/src/assets/img/Typescript.png";
+import react_image from "/src/assets/img/react.png";
+import vite_image from "/src/assets/img/Vite.png";
+import firebase_image from "/src/assets/img/Firebase.png";
+import figma_image from "/src/assets/img/FIGMA.png";
+import c4d_image from "/src/assets/img/Cinema4D.png";
+import photoshop_image from "/src/assets/img/Photoshop.png";
+import skills_icon from "/src/assets/img/skills.png";
 
 export const skills = [
   {
     index: 0,
     title: "HTML",
-    url: "/src/assets/img/HTML.png",
+    url: HTML_image,
     alt: "An icon of HTML logo",
     offsetLg: 700,
     offsetMd: 600,
@@ -35,7 +47,7 @@ export const skills = [
   {
     index: 2,
     title: "Tailwind CSS",
-    url: "/src/assets/img/Tailwind.png",
+    url: tailwind_image,
     alt: "An icon of Tailwind CSS logo",
     offsetLg: 400,
     offsetMd: 300,
@@ -45,7 +57,7 @@ export const skills = [
   {
     index: 3,
     title: "Material UI",
-    url: "/src/assets/img/MUI.png",
+    url: materialui_image,
     alt: "An icon of Material UI logo",
     offsetLg: 400,
     offsetMd: 300,
@@ -55,7 +67,7 @@ export const skills = [
   {
     index: 4,
     title: "Javascript",
-    url: "/src/assets/img/JS.png",
+    url: js_image,
     alt: "An icon of Javascrypt logo",
     offsetLg: 600,
     offsetMd: 500,
@@ -65,7 +77,7 @@ export const skills = [
   {
     index: 5,
     title: "Typescript",
-    url: "/src/assets/img/Typescript.png",
+    url: ts_image,
     alt: "An icon of Typescript logo",
     offsetLg: 700,
     offsetMd: 600,
@@ -75,7 +87,7 @@ export const skills = [
   {
     index: 6,
     title: "React",
-    url: "/src/assets/img/react.png",
+    url: react_image,
     alt: "An icon of React logo",
     offset: 1000,
     offsetMd: 900,
@@ -85,7 +97,7 @@ export const skills = [
   {
     index: 7,
     title: "Vite",
-    url: "/src/assets/img/Vite.png",
+    url: vite_image,
     alt: "An icon of Vite logo",
     offsetLg: 800,
     offsetMd: 700,
@@ -95,7 +107,7 @@ export const skills = [
   {
     index: 8,
     title: "Firebase",
-    url: "/src/assets/img/Firebase.png",
+    url: firebase_image,
     alt: "An icon of Firebase logo",
     offsetLg: 600,
     offsetMd: 500,
@@ -105,7 +117,7 @@ export const skills = [
   {
     index: 9,
     title: "Figma",
-    url: "/src/assets/img/FIGMA.png",
+    url: figma_image,
     alt: "An icon of Figma logo",
     offsetLg: 600,
     offsetMd: 500,
@@ -115,7 +127,7 @@ export const skills = [
   {
     index: 10,
     title: "Cinema4D",
-    url: "/src/assets/img/Cinema4D.png",
+    url: c4d_image,
     alt: "An icon of Cinema4D logo",
     offsetLg: 800,
     offsetMd: 700,
@@ -125,7 +137,7 @@ export const skills = [
   {
     index: 11,
     title: "Photoshop",
-    url: "/src/assets/img/Photoshop.png",
+    url: photoshop_image,
     alt: "An icon of Photoshop logo",
     offsetLg: 1000,
     offsetMd: 900,
@@ -225,7 +237,7 @@ export const Skills = () => {
       >
         <motion.img
           style={{ x: skillsTitleIconX }}
-          src="/src/assets/img/skills.png"
+          src={skills_icon}
           alt="Skills icon"
           className="w-10 md:w-15 h-10 md:h-15 mb-3"
         />
