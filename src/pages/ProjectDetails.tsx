@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useProjects } from "../context/ProjectsContext";
 import { motion } from "framer-motion";
 import { useInViewAnimation } from "../hooks/useInViewAnimation";
+import { Footer } from "../components/ui/layout/Footer";
 
 export default function ProjectDetails() {
   const { projects } = useProjects();
@@ -89,12 +90,12 @@ export default function ProjectDetails() {
   return (
     <>
       <Navbar animate={false} />
-      <div className="min-h-screen bg-black relative  text-white p-4 sm:p-0 z-60 overflow-hidden">
+      <div className="min-h-screen bg-black relative  text-white  sm:p-0 z-60 overflow-hidden">
         <div //Noise overlay
           className="noise absolute top-0 left-0 h-full w-full -z-10 "
         ></div>
         <div //container
-          className="flex flex-col items-start md:max-w-7xl mx-auto mt-10 sm:p-8 "
+          className="flex flex-col items-start md:max-w-7xl mx-auto mt-10 p-4 sm:p-8 "
         >
           <motion.h1
             ref={title}
@@ -197,7 +198,7 @@ export default function ProjectDetails() {
           ref={otherProjectsMobile}
           animate={otherProjectsMobileControls}
           initial={{ opacity: 0, y: 50 }}
-          className="sm:hidden z-50"
+          className="sm:hidden z-50 p-4"
         >
           <h1 className="font-jura text-xl text-light/80 self-center mt-5 mb-2">
             All Projects
@@ -253,6 +254,9 @@ export default function ProjectDetails() {
           }}
           transition={{ duration: 20, ease: "easeInOut", repeat: Infinity }}
         ></motion.div>
+        <div className=" w-full mt-10">
+          <Footer />
+        </div>
       </div>
     </>
   );

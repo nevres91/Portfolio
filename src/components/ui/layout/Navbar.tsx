@@ -15,7 +15,7 @@ export default function Navbar({ animate }: { animate: boolean }) {
     { href: "about", label: "About" },
     { href: "projects", label: "Projects" },
     { href: "contact", label: "Contact" },
-    { href: "components", label: "Components" },
+    // { href: "components", label: "Components" },
   ];
 
   useEffect(() => {

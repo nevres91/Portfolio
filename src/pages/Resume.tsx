@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Button from "../components/ui/Button";
 import { Footer } from "../components/ui/layout/Footer";
 import Navbar from "../components/ui/layout/Navbar";
@@ -26,11 +27,14 @@ const Resume: React.FC = () => {
   const particlesLoaded = async (container?: any) => {
     console.log("Particles loaded!", container);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
       <Navbar animate={false} />
-      <section className="relative min-h-screen bg-black flex flex-col items-center py-20 px-4">
+      <section className="relative  bg-black flex flex-col items-center pt-20 ">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
@@ -107,7 +111,7 @@ const Resume: React.FC = () => {
         </div>
 
         {/* Download Button */}
-        <div className="flex justify-center z-50 mb-30 sm:mb-20 w-full max-w-[206px]">
+        <div className="flex justify-center z-50 mb-10  w-full max-w-[206px]">
           <Button
             onClick={handleDownload}
             aria-label="Download my resume"
@@ -116,10 +120,10 @@ const Resume: React.FC = () => {
             <i className="fa-solid fa-download fa-lg mr-2"></i> Download Resume
           </Button>
         </div>
+        <div className="w-full">
+          <Footer />
+        </div>
       </section>
-      <div className="mt-[90px] sm:mt-[178px]">
-        <Footer />
-      </div>
     </>
   );
 };

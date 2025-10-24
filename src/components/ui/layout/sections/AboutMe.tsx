@@ -92,7 +92,7 @@ export default function AboutMe() {
   );
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText("nevres@example.com");
+    await navigator.clipboard.writeText("nevres_muratovic@hotmail.com");
     toast.success("📋 Email copied!");
   };
 
@@ -181,16 +181,10 @@ export default function AboutMe() {
             src="/src/assets/img/nevres_portrait.png"
             alt="Portrait of Nevres Muratović"
           />
-          {/* <motion.p
-            style={{ y: textY }}
-            className="font-jura-light text-light/50  md:self-center"
-          >
-            nevres_muratovic@hotmail.com
-          </motion.p> */}
           <motion.p
             style={{ y: textY }}
             onClick={() => copyEmail()}
-            className="cursor-pointer font-jura-light text-light/50  md:self-center"
+            className="cursor-pointer font-jura-light text-light/50  md:self-center hover:text-light/70"
           >
             nevres_muratovic@hotmail.com
           </motion.p>

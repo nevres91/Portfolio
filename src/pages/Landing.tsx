@@ -65,11 +65,14 @@ export default function Landing() {
         <Home />
         <AboutMe />
         <Skills />
+        {/* <SkillsShowcase /> */}
         <ProjectsProvider>
           <Projects />
         </ProjectsProvider>
         <Contact />
-        <Footer />
+        <div className="mt-[-300px] w-full ">
+          <Footer />
+        </div>
       </div>
     </div>
   );

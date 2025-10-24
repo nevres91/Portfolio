@@ -19,6 +19,7 @@ export const skills = [
     offsetLg: 700,
     offsetMd: 600,
     offsetSm: 300,
+    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   {
     index: 1,
@@ -28,6 +29,7 @@ export const skills = [
     offsetLg: 600,
     offsetMd: 500,
     offsetSm: 300,
+    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     index: 2,
@@ -37,6 +39,7 @@ export const skills = [
     offsetLg: 400,
     offsetMd: 300,
     offsetSm: 400,
+    link: "https://tailwindcss.com/",
   },
   {
     index: 3,
@@ -46,6 +49,7 @@ export const skills = [
     offsetLg: 400,
     offsetMd: 300,
     offsetSm: 400,
+    link: "https://mui.com/",
   },
   {
     index: 4,
@@ -55,6 +59,7 @@ export const skills = [
     offsetLg: 600,
     offsetMd: 500,
     offsetSm: 500,
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
     index: 5,
@@ -64,6 +69,7 @@ export const skills = [
     offsetLg: 700,
     offsetMd: 600,
     offsetSm: 500,
+    link: "https://www.typescriptlang.org/",
   },
   {
     index: 6,
@@ -73,6 +79,7 @@ export const skills = [
     offset: 1000,
     offsetMd: 900,
     offsetSm: 600,
+    link: "https://react.dev/",
   },
   {
     index: 7,
@@ -82,6 +89,7 @@ export const skills = [
     offsetLg: 800,
     offsetMd: 700,
     offsetSm: 600,
+    link: "https://vitejs.dev/",
   },
   {
     index: 8,
@@ -91,6 +99,7 @@ export const skills = [
     offsetLg: 600,
     offsetMd: 500,
     offsetSm: 700,
+    link: "https://firebase.google.com/",
   },
   {
     index: 9,
@@ -100,6 +109,7 @@ export const skills = [
     offsetLg: 600,
     offsetMd: 500,
     offsetSm: 700,
+    link: "https://www.figma.com/",
   },
   {
     index: 10,
@@ -109,6 +119,7 @@ export const skills = [
     offsetLg: 800,
     offsetMd: 700,
     offsetSm: 800,
+    link: "https://www.maxon.net/en/cinema-4d",
   },
   {
     index: 11,
@@ -118,6 +129,7 @@ export const skills = [
     offsetLg: 1000,
     offsetMd: 900,
     offsetSm: 800,
+    link: "https://www.adobe.com/products/photoshop.html",
   },
 ];
 
@@ -247,12 +259,19 @@ export const Skills = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }} // Optional stagger
             >
-              <SkillCard
-                url={skill.url}
-                alt={skill.alt}
-                title={skill.title}
-                key={skill.title}
-              />
+              <a
+                href={skill.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" w-full h-fit sm:w-[120px] sm:h-[120px]"
+              >
+                <SkillCard
+                  url={skill.url}
+                  alt={skill.alt}
+                  title={skill.title}
+                  key={skill.title}
+                />
+              </a>
             </motion.div>
           );
         })}
