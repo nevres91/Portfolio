@@ -24,7 +24,7 @@ export const skills = [
   {
     index: 1,
     title: "CSS",
-    url: "/src/assets/img/Css.png",
+    url: "/src/assets/Css.png",
     alt: "An icon of CSS logo",
     offsetLg: 600,
     offsetMd: 500,
