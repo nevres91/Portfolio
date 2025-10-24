@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import contact_icon from "/src/assets/img/contact_icon.png";
 
 export default function Contact() {
   // Track scroll progress for the section
@@ -113,7 +114,7 @@ export default function Contact() {
       >
         <motion.img
           style={{ x: projectsTitleIconX }}
-          src="/src/assets/img/contact_icon.png"
+          src={contact_icon}
           alt="an icon representing finished projects"
           className="w-10 md:w-12 h-10 md:h-13"
         />
