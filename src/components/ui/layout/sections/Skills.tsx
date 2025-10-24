@@ -9,6 +9,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { useMediaQuery } from "../../../../hooks/useMediaQuery";
+import css_image from "/src/assets/Css.png";
 
 export const skills = [
   {
@@ -24,7 +25,7 @@ export const skills = [
   {
     index: 1,
     title: "CSS",
-    url: "/src/assets/Css.png",
+    url: css_image,
     alt: "An icon of CSS logo",
     offsetLg: 600,
     offsetMd: 500,
